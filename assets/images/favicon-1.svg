@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 150px;
+        fill: #db4669;
+        font-family: "Arial Rounded MT Bold";
+      }
+    </style>
+  </defs>
+  <path id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" d="M15.085,3H184a10,10,0,0,1,10,10V190.04a10,10,0,0,1-10,10H15.085a10,10,0,0,1-10-10V13A10,10,0,0,1,15.085,3Z"/>
+  <text id="A" class="cls-2" transform="matrix(1.455, 0, 0, 1.455, 25, 180.39)">A</text>
+</svg>
