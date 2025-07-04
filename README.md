@@ -17,10 +17,6 @@ Welcome to my personal portfolio website showcasing my design and development wo
 - CSS3 (custom properties, grid/flexbox)
 - JavaScript (vanilla)
 
-## 📷 Screenshots
-
-> *(Add screenshots here by uploading to the repo and using `![alt text](path/to/image)`)*
-
 ## 🚀 Run Locally
 
 Clone the repo and open `index.html` in your browser:
