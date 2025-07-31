@@ -16,6 +16,8 @@
   --raisin-black_a6: hsla(216, 14%, 14%, 0.06);
   --gunmetal: hsla(214, 15%, 21%, 1);
   --charcoal: hsla(219, 22%, 26%, 1);
+  --base-variant: hsla(220, 20%, 97%, 1); /* example for light */
+  --primary-color: hsla(344, 53%, 62%, 1); /* example primary */
 
   /**
    * typography
@@ -384,7 +386,140 @@ body.nav-active {
   pointer-events: all;
   opacity: 0.8;
 }
+/* Dark Mode */
+/* Theme switch button */
+/* Light Mode (Default) Variables */
+:root {
+  --white: hsla(0, 0%, 100%, 1);
+  --white_a8: hsla(0, 0%, 100%, 0.08);
+  --white_a12: hsla(0, 0%, 100%, 0.12);
+  --cultured: hsla(220, 20%, 97%, 1);
+  --snow: hsla(345, 57%, 97%, 1);
+  --manatee: hsla(219, 10%, 62%, 1);
+  --black-coral: hsla(220, 12%, 43%, 1);
+  --cadet-blue-crayola_a20: hsla(222, 23%, 71%, 0.2);
+  --cinnamon-satin: hsla(344, 53%, 62%, 1);
+  --raisin-black: hsla(216, 14%, 14%, 1);
+  --raisin-black_a6: hsla(216, 14%, 14%, 0.06);
+  --gunmetal: hsla(214, 15%, 21%, 1);
+  --charcoal: hsla(219, 22%, 26%, 1);
+  --base-variant: hsla(0, 0%, 95%, 1);
+  --primary-color: hsla(216, 14%, 14%, 1);
 
+  /* Add transition for smooth theme switching
+  transition: background-color 0.3s ease, color 0.3s ease; */
+}
+
+/* Dark Mode Variables */
+body.darkmode {
+  --white: hsla(216, 14%, 14%, 1); /* Dark background */
+  --white_a8: hsla(0, 0%, 0%, 0.08); /* Dark overlay */
+  --white_a12: hsla(0, 0%, 0%, 0.12); /* Dark overlay */
+  --cultured: hsla(220, 20%, 12%, 1); /* Very dark gray */
+  --snow: hsla(345, 57%, 15%, 1); /* Dark reddish */
+  --manatee: hsla(219, 10%, 70%, 1); /* Light gray text */
+  --black-coral: hsla(220, 12%, 75%, 1); /* Light gray */
+  --cadet-blue-crayola_a20: hsla(222, 23%, 30%, 0.2); /* Dark blue overlay */
+  --cinnamon-satin: hsla(344, 53%, 65%, 1); /* Lighter accent */
+  --raisin-black: hsla(0, 0%, 95%, 1); /* Light text */
+  --raisin-black_a6: hsla(0, 0%, 100%, 0.06); /* Light overlay */
+  --gunmetal: hsla(214, 15%, 80%, 1); /* Light text */
+  --charcoal: hsla(219, 22%, 75%, 1); /* Light text */
+  --base-variant: hsla(216, 14%, 20%, 1); /* Dark button background */
+  --primary-color: hsla(345, 57%, 97%, 1); /* Light accent */
+}
+
+/* Theme Switch Button */
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.1);
+}
+
+#theme-switch:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.15);
+}
+
+#theme-switch:active {
+  transform: scale(0.95);
+}
+
+#theme-switch:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* SVG icon styling */
+#theme-switch svg {
+  fill: var(--primary-color);
+  transition: fill 0.3s ease;
+  width: 24px;
+  height: 24px;
+}
+
+/* Icon visibility logic - Default state (light mode) shows moon icon */
+#theme-switch svg:first-child {
+  display: block; /* Moon icon visible in light mode */
+}
+
+#theme-switch svg:last-child {
+  display: none; /* Sun icon hidden in light mode */
+}
+
+/* Dark mode state shows sun icon */
+body.darkmode #theme-switch svg:first-child {
+  display: none; /* Moon icon hidden in dark mode */
+}
+
+body.darkmode #theme-switch svg:last-child {
+  display: block; /* Sun icon visible in dark mode */
+}
+
+/* Additional styles for smooth transitions */
+/* body {
+  background-color: var(--white);
+  color: var(--raisin-black);
+  transition: background-color 0.3s ease, color 0.3s ease;
+} */
+
+/* Ensure all elements using CSS variables transition smoothly */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* If you have specific elements that use these variables, make sure they transition */
+.card,
+.section,
+.header,
+.navbar {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Optional: Add some visual feedback for theme switching */
+body.darkmode {
+  animation: theme-switch-in 0.3s ease;
+}
+
+@keyframes theme-switch-in {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Hero */
 
 .hero {
