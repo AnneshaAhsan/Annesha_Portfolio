@@ -16,8 +16,8 @@
   --raisin-black_a6: hsla(216, 14%, 14%, 0.06);
   --gunmetal: hsla(214, 15%, 21%, 1);
   --charcoal: hsla(219, 22%, 26%, 1);
-  --base-variant: hsla(220, 20%, 97%, 1); /* example for light */
-  --primary-color: hsla(344, 53%, 62%, 1); /* example primary */
+  --base-variant: hsla(220, 20%, 97%, 1);
+  --primary-color: hsla(344, 53%, 62%, 1);
 
   /**
    * typography
@@ -65,6 +65,29 @@
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease;
   --transition-3: 0.3s ease-in-out;
+}
+
+/* Dark Mode Variables */
+body.darkmode {
+  --white: hsla(216, 14%, 14%, 1); /* Dark background */
+  --white_a8: hsla(216, 14%, 14%, 0.08); /* Dark overlay */
+  --white_a12: hsla(216, 14%, 14%, 0.12); /* Dark overlay */
+  --cultured: hsla(220, 20%, 12%, 1); /* Very dark gray */
+  --snow: hsla(216, 14%, 18%, 1); /* Dark background for cards */
+  --manatee: hsla(219, 10%, 70%, 1); /* Light gray text */
+  --black-coral: hsla(220, 12%, 75%, 1); /* Light gray text */
+  --cadet-blue-crayola_a20: hsla(222, 23%, 30%, 0.2); /* Dark blue overlay */
+  --cinnamon-satin: hsla(344, 53%, 65%, 1); /* Lighter accent */
+  --raisin-black: hsla(0, 0%, 95%, 1); /* Light text */
+  --raisin-black_a6: hsla(0, 0%, 100%, 0.06); /* Light overlay */
+  --gunmetal: hsla(214, 15%, 80%, 1); /* Light text */
+  --charcoal: hsla(219, 22%, 85%, 1); /* Light text */
+  --base-variant: hsla(216, 14%, 20%, 1); /* Dark button background */
+  --primary-color: hsla(345, 57%, 97%, 1); /* Light accent */
+
+  /* Dark mode shadows */
+  --shadow-1: 0 0 20px hsla(0, 0%, 0%, 0.2);
+  --shadow-2: 0 4px 28px hsla(0, 0%, 0%, 0.3);
 }
 
 /* Reset */
@@ -129,6 +152,7 @@ body {
   color: var(--black-coral);
   font-size: 1.6rem;
   line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.nav-active {
@@ -140,15 +164,15 @@ body.nav-active {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--cultured);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(0, 0%, 80%);
+  background-color: var(--manatee);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(0, 0%, 70%);
+  background-color: var(--black-coral);
 }
 
 /* reused style */
@@ -276,6 +300,7 @@ body.nav-active {
   padding-block: 20px;
   box-shadow: var(--shadow-1);
   z-index: 4;
+  transition: background-color 0.3s ease;
 }
 
 .header.active {
@@ -386,48 +411,6 @@ body.nav-active {
   pointer-events: all;
   opacity: 0.8;
 }
-/* Dark Mode */
-/* Theme switch button */
-/* Light Mode (Default) Variables */
-:root {
-  --white: hsla(0, 0%, 100%, 1);
-  --white_a8: hsla(0, 0%, 100%, 0.08);
-  --white_a12: hsla(0, 0%, 100%, 0.12);
-  --cultured: hsla(220, 20%, 97%, 1);
-  --snow: hsla(345, 57%, 97%, 1);
-  --manatee: hsla(219, 10%, 62%, 1);
-  --black-coral: hsla(220, 12%, 43%, 1);
-  --cadet-blue-crayola_a20: hsla(222, 23%, 71%, 0.2);
-  --cinnamon-satin: hsla(344, 53%, 62%, 1);
-  --raisin-black: hsla(216, 14%, 14%, 1);
-  --raisin-black_a6: hsla(216, 14%, 14%, 0.06);
-  --gunmetal: hsla(214, 15%, 21%, 1);
-  --charcoal: hsla(219, 22%, 26%, 1);
-  --base-variant: hsla(0, 0%, 95%, 1);
-  --primary-color: hsla(216, 14%, 14%, 1);
-
-  /* Add transition for smooth theme switching
-  transition: background-color 0.3s ease, color 0.3s ease; */
-}
-
-/* Dark Mode Variables */
-body.darkmode {
-  --white: hsla(216, 14%, 14%, 1); /* Dark background */
-  --white_a8: hsla(0, 0%, 0%, 0.08); /* Dark overlay */
-  --white_a12: hsla(0, 0%, 0%, 0.12); /* Dark overlay */
-  --cultured: hsla(220, 20%, 12%, 1); /* Very dark gray */
-  --snow: hsla(345, 57%, 15%, 1); /* Dark reddish */
-  --manatee: hsla(219, 10%, 70%, 1); /* Light gray text */
-  --black-coral: hsla(220, 12%, 75%, 1); /* Light gray */
-  --cadet-blue-crayola_a20: hsla(222, 23%, 30%, 0.2); /* Dark blue overlay */
-  --cinnamon-satin: hsla(344, 53%, 65%, 1); /* Lighter accent */
-  --raisin-black: hsla(0, 0%, 95%, 1); /* Light text */
-  --raisin-black_a6: hsla(0, 0%, 100%, 0.06); /* Light overlay */
-  --gunmetal: hsla(214, 15%, 80%, 1); /* Light text */
-  --charcoal: hsla(219, 22%, 75%, 1); /* Light text */
-  --base-variant: hsla(216, 14%, 20%, 1); /* Dark button background */
-  --primary-color: hsla(345, 57%, 97%, 1); /* Light accent */
-}
 
 /* Theme Switch Button */
 #theme-switch {
@@ -442,12 +425,12 @@ body.darkmode {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.1);
+  box-shadow: var(--shadow-1);
 }
 
 #theme-switch:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.15);
+  box-shadow: var(--shadow-2);
 }
 
 #theme-switch:active {
@@ -461,7 +444,7 @@ body.darkmode {
 
 /* SVG icon styling */
 #theme-switch svg {
-  fill: var(--primary-color);
+  fill: var(--charcoal);
   transition: fill 0.3s ease;
   width: 24px;
   height: 24px;
@@ -485,46 +468,12 @@ body.darkmode #theme-switch svg:last-child {
   display: block; /* Sun icon visible in dark mode */
 }
 
-/* Additional styles for smooth transitions */
-/* body {
-  background-color: var(--white);
-  color: var(--raisin-black);
-  transition: background-color 0.3s ease, color 0.3s ease;
-} */
-
-/* Ensure all elements using CSS variables transition smoothly */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* If you have specific elements that use these variables, make sure they transition */
-.card,
-.section,
-.header,
-.navbar {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-/* Optional: Add some visual feedback for theme switching */
-body.darkmode {
-  animation: theme-switch-in 0.3s ease;
-}
-
-@keyframes theme-switch-in {
-  from {
-    opacity: 0.8;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /* Hero */
 
 .hero {
   padding-block-start: calc(var(--section-padding) + 50px);
   background-color: var(--cultured);
+  transition: background-color 0.3s ease;
 }
 
 .hero .container {
@@ -696,6 +645,7 @@ body.darkmode {
   border-radius: var(--radius-8);
   display: grid;
   gap: 40px;
+  transition: background-color 0.3s ease;
 }
 
 .contact .section-title {
@@ -710,6 +660,7 @@ body.darkmode {
   border-radius: var(--radius-6);
   outline: none;
   margin-block-end: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .input-field::placeholder {
